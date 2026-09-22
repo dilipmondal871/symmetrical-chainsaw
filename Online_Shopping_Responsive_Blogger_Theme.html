@@ -1,0 +1,944 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:js='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gdata/widgets' xmlns:data='http://www.googleapis.com/2005/gdata/datastore' xmlns:expr='http://www.google.com/2005/gdata/extensions'>
+<head>
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+<title>আপনার ভবিষ্যৎ দেখুন ও বাংলা প্রেমের বাণী</title>
+<link href='https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&amp;display=swap' rel='stylesheet'/>
+
+<style>
+:root {
+  --bg-dark: #070913;
+  --bg-gradient: linear-gradient(135deg, #070913 0%, #120b24 50%, #1c0a2c 100%);
+  --glass-bg: rgba(18, 14, 35, 0.9);
+  --glass-border: rgba(168, 85, 247, 0.4);
+  --primary-glow: #a855f7;
+  --secondary-glow: #ec4899;
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --card-radius: 24px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Noto Sans Bengali', sans-serif; }
+
+body {
+  background: #070913 !important;
+  background-image: linear-gradient(135deg, #070913 0%, #120b24 50%, #1c0a2c 100%) !important;
+  color: var(--text-main) !important;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 5%;
+  background: rgba(7, 9, 19, 0.95);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.nav-brand { font-size: 1.3rem; font-weight: 700; color: #fff; text-decoration: none; }
+.nav-links { display: flex; gap: 20px; list-style: none; }
+.nav-links a { color: var(--text-muted); text-decoration: none; cursor: pointer; }
+.nav-links a:hover { color: var(--primary-glow); }
+
+.tab-switcher {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 25px auto 10px;
+  padding: 0 20px;
+}
+
+.tab-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: var(--text-muted);
+  padding: 10px 22px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  color: #fff;
+  border-color: transparent;
+}
+
+.container { max-width: 680px; margin: 0 auto 50px; padding: 20px; }
+.section-content { display: none; }
+.section-content.active { display: block; }
+
+.hero-section { text-align: center; margin-bottom: 30px; }
+.crystal-ball-icon { font-size: 3.5rem; display: inline-block; }
+.hero-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 10px 0 5px;
+}
+.hero-subtitle { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px; }
+.disclaimer-badge {
+  display: inline-block;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--card-radius);
+  padding: 30px;
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.3);
+  position: relative;
+}
+
+.card-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 22px; color: #fff; }
+
+.form-group { margin-bottom: 20px; text-align: left; }
+.form-label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; }
+.form-input {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(168, 85, 247, 0.4) !important;
+  border-radius: 14px;
+  color: #fff !important;
+  font-size: 1rem;
+  outline: none;
+}
+.error-msg { color: #f87171; font-size: 0.8rem; margin-top: 5px; display: none; }
+
+.btn-primary {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+.ad-slot-box {
+  margin: 25px 0;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed rgba(168, 85, 247, 0.3);
+  border-radius: 14px;
+  padding: 15px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(7, 9, 19, 0.96);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.loading-overlay.active { opacity: 1; pointer-events: auto; }
+
+.loading-box {
+  text-align: center;
+  max-width: 420px;
+  padding: 30px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--card-radius);
+}
+.spinner-orb { font-size: 4rem; display: inline-block; margin-bottom: 15px; }
+
+.countdown-wrapper {
+  background: rgba(236, 72, 153, 0.12);
+  border: 1px solid rgba(236, 72, 153, 0.35);
+  padding: 14px;
+  border-radius: 12px;
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.result-header { text-align: center; margin-bottom: 25px; }
+.result-user-title {
+  font-size: 1.5rem; font-weight: 800; color: #fff; margin-top: 5px;
+  background: linear-gradient(135deg, #06b6d4, #a855f7);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.result-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-bottom: 25px; }
+.result-item {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  padding: 15px 20px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.result-icon { font-size: 1.8rem; }
+.result-label { font-size: 0.82rem; color: var(--text-muted); }
+.result-value { font-size: 1.05rem; font-weight: 700; color: #fff; }
+
+.action-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
+.full-width-btn { grid-column: span 2; }
+
+.canvas-preview-container { text-align: center; margin: 20px 0; }
+#shareCanvas { max-width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--glass-border); }
+
+.ghalib-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+.ghalib-card-item {
+  background: var(--glass-bg);
+  border: 1px solid rgba(236, 72, 153, 0.35);
+  border-radius: var(--card-radius);
+  padding: 22px;
+}
+.ghalib-verse {
+  font-size: 1.1rem; line-height: 1.6; color: #fbcfe8; text-align: center; margin-bottom: 15px; font-style: italic;
+}
+.ghalib-actions { display: flex; gap: 10px; justify-content: center; }
+.ghalib-customize-box { margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255, 255, 255, 0.1); display: none; }
+.ghalib-customize-box.active { display: block; }
+
+.footer { text-align: center; padding: 30px 20px; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid rgba(168, 85, 247, 0.2); }
+
+@media (min-width: 768px) { .ghalib-grid { grid-template-columns: 1fr 1fr; } }
+/* ===== Blogger Responsive Compatibility Layer =====
+   Added only for mobile/tablet/desktop compatibility.
+   Existing design, content and JavaScript are preserved.
+*/
+html, body {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+img, canvas, video, iframe {
+  max-width: 100%;
+}
+
+button, input, textarea, select {
+  max-width: 100%;
+  font-family: 'Noto Sans Bengali', sans-serif;
+}
+
+.navbar {
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.nav-links {
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.tab-switcher {
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  min-width: 0;
+}
+
+.container {
+  width: 100%;
+}
+
+.glass-card,
+.ghalib-card-item {
+  width: 100%;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.result-value,
+.ghalib-verse {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.canvas-preview-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+#shareCanvas {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.action-buttons {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    padding: 14px 16px;
+  }
+
+  .nav-brand {
+    font-size: 1.05rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .tab-switcher {
+    gap: 8px;
+    margin: 18px auto 8px;
+    padding: 0 12px;
+  }
+
+  .tab-btn {
+    flex: 1 1 140px;
+    padding: 10px 12px;
+    font-size: 0.88rem;
+  }
+
+  .container {
+    padding: 12px;
+    margin-bottom: 30px;
+  }
+
+  .hero-title {
+    font-size: clamp(1.55rem, 7vw, 2.2rem);
+  }
+
+  .hero-subtitle {
+    font-size: 0.88rem;
+  }
+
+  .glass-card,
+  .ghalib-card-item {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .form-input {
+    min-height: 48px;
+    font-size: 16px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    min-height: 46px;
+  }
+
+  .action-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width-btn {
+    grid-column: auto;
+  }
+
+  .result-item {
+    padding: 13px 14px;
+    gap: 10px;
+  }
+
+  .result-value {
+    font-size: 0.98rem;
+  }
+
+  .ghalib-actions {
+    flex-wrap: wrap;
+  }
+
+  .ghalib-actions .btn-secondary {
+    flex: 1 1 130px;
+  }
+
+  .loading-box {
+    width: calc(100% - 24px);
+    max-width: 420px;
+    padding: 22px 16px;
+  }
+
+  .footer {
+    padding: 24px 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav-links a {
+    font-size: 0.86rem;
+  }
+
+  .tab-btn {
+    flex-basis: 100%;
+  }
+
+  .crystal-ball-icon {
+    font-size: 2.8rem;
+  }
+
+  .result-header .crystal-ball-icon {
+    font-size: 2.2rem !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .container {
+    max-width: 760px;
+  }
+}
+
+@media (min-width: 1101px) {
+  .container {
+    max-width: 900px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class='navbar'>
+  <a class='nav-brand' href='#'>🔮 আপনার ভবিষ্যৎ</a>
+  <ul class='nav-links'>
+    <li><a onclick='switchTab("future")'>হোম</a></li>
+    <li><a onclick='switchTab("ghalib")'>মির্জা গালিব প্রেম</a></li>
+  </ul>
+</header>
+
+<div class='tab-switcher'>
+  <button class='tab-btn active' id='tabBtnFuture' onclick='switchTab("future")'>🔮 ভবিষ্যৎ দর্শন</button>
+  <button class='tab-btn' id='tabBtnGhalib' onclick='switchTab("ghalib")'>📜 মির্জা গালিবের প্রেম (৫০+)</button>
+</div>
+
+<div class='container'>
+  <!-- Future Prediction Section -->
+  <div class='section-content active' id='sectionFuture'>
+    <div class='hero-section'>
+      <div class='crystal-ball-icon'>🔮</div>
+      <h1 class='hero-title'>আপনার ভবিষ্যৎ দেখুন</h1>
+      <p class='hero-subtitle'>আপনার নাম, বয়স ও ঠিকানা লিখুন এবং দেখুন আপনার ভবিষ্যতের একটি মজার ঝলক।</p>
+      <div class='disclaimer-badge'>⚠️ এটি সম্পূর্ণ বিনোদনমূলক কাল্পনিক prediction</div>
+    </div>
+
+    <div class='glass-card' id='formCard'>
+      <div class='card-title'>✨ আপনার তথ্য দিন</div>
+      
+      <div class='form-group'>
+        <label class='form-label'>আপনার নাম *</label>
+        <input class='form-input' id='inputName' placeholder='যেমন: Tanbin' type='text'/>
+        <div class='error-msg' id='errorName'>আপনার নাম লিখুন</div>
+      </div>
+
+      <div class='form-group'>
+        <label class='form-label'>আপনার বয়স *</label>
+        <input class='form-input' id='inputAge' min='13' max='100' placeholder='যেমন: ২৫' type='number'/>
+        <div class='error-msg' id='errorAge'>সঠিক বয়স লিখুন (১৩ থেকে ১০০ এর মধ্যে)</div>
+      </div>
+
+      <div class='form-group'>
+        <label class='form-label'>আপনার ঠিকানা *</label>
+        <input class='form-input' id='inputAddress' placeholder='যেমন: ঢাকা' type='text'/>
+        <div class='error-msg' id='errorAddress'>আপনার ঠিকানা লিখুন</div>
+      </div>
+
+      <button class='btn-primary' onclick='startPredictionFlow()'>🔮 আমার ভবিষ্যৎ দেখুন</button>
+    </div>
+
+    <div class='ad-slot-box'>[ Sponsored Advertisement Slot ]</div>
+
+    <div class='glass-card' id='resultCard' style='display: none;'>
+      <div class='result-header'>
+        <div class='crystal-ball-icon' style='font-size: 2.5rem;'>✨</div>
+        <div style='color: var(--text-muted); font-size: 0.9rem;'>আপনার ভবিষ্যতের ঝলক</div>
+        <div class='result-user-title' id='displayUserNameHeader'>Future Report</div>
+      </div>
+
+      <div class='result-grid' id='resultGridContent'></div>
+
+      <div class='canvas-preview-container'>
+        <canvas id='shareCanvas' width='1080' height='1350'></canvas>
+      </div>
+
+      <div class='action-buttons'>
+        <button class='btn-secondary' onclick='downloadCard()'>⬇️ ডাউনলোড</button>
+        <button class='btn-secondary' onclick='shareCard()'>📤 শেয়ার</button>
+        <button class='btn-secondary full-width-btn' onclick='regeneratePrediction()'>🔄 আবার দেখুন</button>
+        <button class='btn-secondary full-width-btn' onclick='editInformation()'>✏️ তথ্য পরিবর্তন</button>
+      </div>
+    </div>
+
+    <div class='ad-slot-box'>[ Sponsored Advertisement Slot ]</div>
+  </div>
+
+  <!-- Mirza Ghalib Section -->
+  <div class='section-content' id='sectionGhalib'>
+    <div class='ghalib-section-header'>
+      <div class='crystal-ball-icon' style='font-size: 3rem;'>📜</div>
+      <h1 class='hero-title'>মির্জা গালিবের প্রেমের বাণী</h1>
+      <p class='hero-subtitle'>প্রেমিক-প্রেমিকাদের জন্য ৫০+ কালজয়ী প্রেমের শের ও কাস্টমাইজযোগ্য রোমান্টিক পোস্টকার্ড</p>
+      <div class='disclaimer-badge'>❤️ ভালোবাসার অনুভূতির কাব্যিক প্রকাশ</div>
+    </div>
+
+    <div class='form-group' style='margin-bottom: 20px;'>
+      <input class='form-input' id='ghalibSearchInput' oninput='filterGhalibShayari()' placeholder='🔍 গালিবের বাণী খুঁজুন...' type='text'/>
+    </div>
+
+    <div class='ghalib-grid' id='ghalibContainer'></div>
+    <div class='ad-slot-box'>[ Sponsored Advertisement Slot ]</div>
+  </div>
+</div>
+
+<div class='loading-overlay' id='loadingOverlay'>
+  <div class='loading-box'>
+    <div class='spinner-orb'>🔮</div>
+    <div class='loading-text' id='loadingStepText'>ভবিষ্যতের দরজা খোলা হচ্ছে...</div>
+    <div class='countdown-wrapper'>
+      <span>অ্যাডসের পেজে রিডাইরেক্ট করা হয়েছে!</span><br/>
+      <div id='countdownTimer' style='font-size: 1.5rem; font-weight: 700; color: #f43f8e; margin: 8px 0;'>15</div>
+      <span style='font-size: 0.85rem;'>১৫ সেকেন্ড পর রেজাল্ট স্বয়ংক্রিয়ভাবে চলে আসবে।</span>
+    </div>
+  </div>
+</div>
+
+<footer class='footer'>
+  <p>🔮 আপনার ভবিষ্যৎ দেখুন | বিনোদনমূলক কাল্পনিক প্ল্যাটফর্ম</p>
+</footer>
+
+<script type='text/javascript'>
+//<![CDATA[
+const adUrl = "https://www.profitableratecpmnetwork.com/ss8rqpg7?key=8f54a823a27df1ffcadabff5f37b6450";
+
+function switchTab(tabName) {
+  document.getElementById('sectionFuture').classList.remove('active');
+  document.getElementById('sectionGhalib').classList.remove('active');
+  document.getElementById('tabBtnFuture').classList.remove('active');
+  document.getElementById('tabBtnGhalib').classList.remove('active');
+
+  if (tabName === 'future') {
+    document.getElementById('sectionFuture').classList.add('active');
+    document.getElementById('tabBtnFuture').classList.add('active');
+  } else {
+    document.getElementById('sectionGhalib').classList.add('active');
+    document.getElementById('tabBtnGhalib').classList.add('active');
+    renderGhalibCards();
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+const partnerNames = ["সাদিয়া", "মিম", "তানহা", "জুঁই", "নুসরাত", "মেহজাবিন", "মায়া", "পিয়া", "বৃষ্টি", "লাবণ্য", "তাসনিম", "তামান্না", "ফারিয়া", "সুমাইয়া", "সানজিদা", "নাদিয়া", "রাইসা", "রিমি", "রিয়া", "মুনিয়া", "মৌ", "নীলা", "নীহা", "শারমিন", "আফরিন", "জান্নাত", "জেরিন", "পূজা", "প্রিয়া", "তিশা", "তুলি", "তৃষা", "তানিয়া", "ইশরাত", "ইরা", "সোহা", "সোহানা", "স্নিগ্ধা", "মেঘলা", "রূপা", "রূপসা", "লিজা", "লামিয়া", "সাবিহা", "সামিয়া", "সাফা", "মাহি", "মাহিরা", "মারিয়া", "মাইশা", "মুনতাহা", "হুমায়রা", "নাবিলা", "নাফিসা", "ফারিহা", "ফাইজা", "উর্মি", "নওশীন", "ঝিলিক", "অর্পিতা"];
+const broadLocations = ["ঢাকা", "চট্টগ্রাম", "কুমিল্লা", "সিলেট", "খুলনা", "রাজশাহী", "বরিশাল", "রংপুর", "ময়মনসিংহ", "নারায়ণগঞ্জ", "গাজীপুর", "সাভার", "কক্সবাজার", "নোয়াখালী", "ফরিদপুর", "যশোর", "বগুড়া", "কুষ্টিয়া"];
+const streetComponents = ["মায়াবতী রোড, প্রেমের গলি", "ফুচকা বাজারের পাশের গলি", "জোছনা লেন", "স্বপ্নপুরী রোড", "হাসির মোড়", "চাঁদের গলি", "গোলাপ বাগান লেন", "রিমঝিম এভিনিউ", "নীল আকাশ সড়ক"];
+const firstMeetings = ["একটি কফি শপে", "বন্ধুর মাধ্যমে", "Facebook-এর মাধ্যমে", "একটি অনুষ্ঠানে", "হঠাৎ কোনো ভ্রমণে", "বন্ধুর বিয়েতে", "ভার্সিটির ক্যানটিনে"];
+const firstGifts = ["পারফিউম", "ফুল", "ঘড়ি", "বই", "চকলেট", "একটি সুন্দর চিঠি", "হাতের তৈরি ব্রেসলেট"];
+const funnyArguments = ["Seen করে Reply দিতে দেরি করায় 😂", "কার আগে কল কেটে দিয়েছে তা নিয়ে 😆", "ফুচকা কে বেশি খাবে তা নিয়ে 🤣", "ছোট একটা ভুল বোঝাবুঝি নিয়ে", "কোথায় ঘুরতে যাবে তা নিয়ে"];
+
+// ৫০+ মির্জা গালিবের প্রেমের বাণী (সম্পূর্ণ বিশুদ্ধ বাংলা অনুবাদ)
+const ghalibShayariList = [
+  "হাজারো ইচ্ছা এমন যে প্রতিটির জন্য প্রাণ দিতে ইচ্ছে করে... অনেক আশা পূরণ হলো, কিন্তু তবুও কিছু আশা অপূর্ণ থেকে গেল।",
+  "প্রেম হয়তো আমার বন্যতাই ছিল, কিন্তু তোমার খ্যাতি তো বিশ্বজোড়া।",
+  "ভালোবাসায় জীবন আর মৃত্যুর মাঝে কোনো তফাত থাকে না... যাকে দেখে বেঁচে থাকি, তাকেই নিজের সবকিছু মেনে নিই।",
+  "শিরায় রক্ত শুধু বয়ে যাওয়ার জন্য নয়... যদি তা চোখের কোণ গলে না ঝরে, তবে সে রক্তের দাম কী?",
+  "তোমার ওয়াদা তো এটাই ছিল যে আজীবন পাশে থাকবে... কিন্তু আমি তোমার প্রতীক্ষায় গোটা জীবন কাটিয়ে দিলাম।",
+  "দিল তো কেবল মাংস-হাড়ের পিন্ড নয়... কষ্টের চোটে কেন এই বুক ফেটে আসবে না বলো?",
+  "যখন আমার নিজের অস্তিত্ব নিয়েই সন্দেহ জাগল... তখন তুমিই আমাকে ভুলিয়ে দিলে।",
+  "এটা তো আমার ভাগ্যেই ছিল না যে প্রিয়জনকে কাছে পাবো... যদি আরও কিছুদিন বেঁচে থাকতাম, তবে হয়তো এই অপেক্ষাই দীর্ঘ হতো।",
+  "প্রেমে কে কাকে মনে রাখে... আমরা তো তোমাকে নিজের চেয়েও বেশি ভালোবেসে ফেলি।",
+  "হাজার বছর ধরে নরগিস ফুল নিজের সৌন্দর্যহীনতার জন্য কাঁদে... বড় কষ্টে বাগানে একজন গুণী জন্ম নেয়।",
+  "তোমার চোখের নেশাটাই এমন ছিল... যে আমরা পান না করেই মত্ত হয়ে গেলাম।",
+  "কাকে শোনাবো আমার এই প্রেমের উপাখ্যান... তোমাকে ছাড়া তো প্রতিটি নিশ্বাসও ভারী ঠেকে।",
+  "তোমার স্মৃতির প্রদীপ জিম্বি হয়ে জ্বলে আমার অন্তরে... অন্ধকার যতই গভীর হোক না কেন।",
+  "ভালোবাসায় কোনো বাঁধন থাকে না... এ তো মনের এমন এক কথা যা আপনাআপনি হয়ে যায়।",
+  "আমি তো শুধু এতটুকুই চেয়েছিলাম তোমার কাছে... যে তুমি যেন আমায় ছাড়া কোথাও অসম্পূর্ণ না থাকো।",
+  "প্রতিটি কথাতেই তো বলো তুমি যে আমি কে তোমার... এবার তুমিই বলো তোমার এই উদাসীনতার অর্থ কী?",
+  "আমার হৃদয়ের বসতি বড় বিরান তোমার অনুপস্থিতিতে... কেউ এসে একবার দেখে যাক আমার কষ্টের উপাখ্যান।",
+  "তোমার স্মৃতির মাঝেই কেটে যায় প্রতিটা রাত... সকাল হতেই আবার তোমার প্রতীক্ষা শুরু।",
+  "তোমার এই ভালোবাসা আমাকে শিখিয়েছে... কীভাবে নিজেকে ভুলে গিয়ে শুধু তোমাকেই মনে রাখতে হয়।",
+  "প্রতিটি নতুন সকাল বয়ে আনে তোমার স্মৃতি... মনে হয় যেন কোনো পুরনো স্বপ্ন আবার জেগে উঠেছে।",
+  "প্রেমের ধরনটাই বড় অদ্ভুত হয়... কাঁদে তো তারাই যারা মন থেকে ভালোবাসে।",
+  "এই রাত, এই আবহাওয়া, নদীর এই কিনারা... আর তোমার এক ফোঁটা স্মৃতির একমাত্র সাহারা।",
+  "আমার একাকীত্ব আমাকে প্রায়ই প্রশ্ন করে... যারা তোমাকে ছেড়ে চলে গেল, তারা কি সত্যিই ভালোবাসত?",
+  "হৃদয়ের কলম দিয়ে লেখা হয়েছে তোমার স্মৃতি... প্রতিটা শব্দে কেবল তোমারই নাম।",
+  "তোমাকে ছাড়া বেঁচে থাকা এক প্রকার সাজা যেন... তবুও এই কষ্টের মাঝেও এক অদ্ভুত শান্তি আছে।",
+  "খোদার কাছে তোমার চেয়ে আর কী বা চাইবো... তুমি যদি পাও, তবে পুরো পৃথিবী আমার হয়ে যায়।",
+  "তোমার এই মায়াবী চোখের জগৎটাই আলাদা... যে ঠিকানায় একবার ডুব দিলে আর উঠতে ইচ্ছে করে না।",
+  "কেউ তো হোক যে আমার এই নীরবতা পড়তে পারে... যেমন আমি তোমার প্রতিটি ইশারা পড়ে ফেলি।",
+  "এই ভালোবাসা জীবনে কত রূপই না দেখায়... কভু হাসায়, আবার কভু কাঁদায়।",
+  "তোমার পথে বিছিয়ে দিয়েছি আমার চোখের পলক... কখনো ফুরসত পেলে এসো।",
+  "হৃদয়ের একটাই মাত্র আকুতি... তুমি যেন সবসময় আমার পাশেই থাকো।",
+  "তোমার সুবাস আমার নিশ্বাসে মিশে থাকে... ঠিক যেমন ফুলে ফুলে ঘ্রাণ থাকে।",
+  "জীবনের এই ভিড়ে... তোমার হাতটি যেন আমার হাতেই থাকে।",
+  "তোমার এই অবহেলার কোনো অভিযোগ নেই আমার... দোষ তো আমারই ছিল যে তোমাকে ভালোবেসেছিলাম।",
+  "তোমার প্রতিটি কথা হৃদয়ে গিয়ে আঘাত করে... যেন কোনো মিষ্টি সুর বেজে উঠেছে।",
+  "রাতের এই নিস্তব্ধতায় কেবল তোমারই কণ্ঠস্বর প্রতিধ্বনিত হয়... মনে হয় তুমি এই আশপাশেই আছো।",
+  "প্রেমে হার-জিত বলে কিছু হয় না... কেবল একসাথে পথ চলাটাই সব।",
+  "তোমার প্রেমে বিলীন হয়ে যাওয়ার মজাই আলাদা।",
+  "এই পৃথিবী প্রেমের এই গল্প কী বা জানবে... এখানে তো প্রতি নিশ্বাসে তোমারই নাম।",
+  "তোমার এক পলক চাহনিতে সব বিলিয়ে দিই... এটাই তো আমার ভালোবাসার ধরণ।",
+  "হৃদয়ের প্রতি স্পন্দনে কেবল তোমারই নাম... তুমি শুনো বা না শুনো।",
+  "তোমার স্মৃতির ভরসায় দিনগুলো কেটে যাচ্ছে... কবে দেখা হবে বলো তো?",
+  "প্রেমের নেশা যখন মাথায় চড়ে... তখন সারা পৃথিবীর কথা ভুলে যেতে হয়।",
+  "তোমার চেহারার হাসিটাই আমার পৃথিবী... তুমি সবসময় হাসিখুশি থেকো।",
+  "কোনো প্রশংসাই যথেষ্ট নয় তোমার জন্য... তুমি এক এবং অদ্বিতীয়।",
+  "তোমার জন্য এই প্রতীক্ষা করার অনুভূতিটাই বড় মধুর... মনে হয় প্রেমের ইবাদত চলছে।",
+  "হৃদয়ের কথা একটাই— তুমিই আমার শেষ ঠিকানা।",
+  "তোমার ভালোবাসায় যে শান্তি খুঁজে পেয়েছি... তা অন্য কোথাও নেই।",
+  "এই সন্ধ্যা আর তোমার স্মৃতি... কী দারুণ এক মেলবন্ধন।",
+  "প্রতিটি গঞ্জলে কেবল তোমারই আলোচনা হবে... যতদিন আমার প্রাণে প্রাণ আছে।"
+];
+
+let currentPredictionData = null;
+let currentCountdownInterval = null;
+
+function startPredictionFlow() {
+  const name = document.getElementById('inputName').value.trim();
+  const age = parseInt(document.getElementById('inputAge').value);
+  const address = document.getElementById('inputAddress').value.trim();
+
+  let isValid = true;
+  if (!name) { document.getElementById('errorName').style.display = 'block'; isValid = false; } else { document.getElementById('errorName').style.display = 'none'; }
+  if (isNaN(age) || age < 13 || age > 100) { document.getElementById('errorAge').style.display = 'block'; isValid = false; } else { document.getElementById('errorAge').style.display = 'none'; }
+  if (!address) { document.getElementById('errorAddress').style.display = 'block'; isValid = false; } else { document.getElementById('errorAddress').style.display = 'none'; }
+
+  if (!isValid) return;
+
+  // Immediately Open Ad in New Tab & Start Countdown
+  window.open(adUrl, '_blank');
+  triggerAdCountdown(() => {
+    generatePredictionResult(name, age, address);
+  });
+}
+
+function triggerAdCountdown(onComplete) {
+  const overlay = document.getElementById('loadingOverlay');
+  overlay.classList.add('active');
+
+  let timeLeft = 15;
+  const timerEl = document.getElementById('countdownTimer');
+  timerEl.innerText = timeLeft;
+
+  const steps = ["🔮 ভবিষ্যতের দরজা খোলা হচ্ছে...", "✨ আপনার তথ্য সাজানো হচ্ছে...", "❤️ সম্পর্কের prediction তৈরি হচ্ছে...", "📍 কাল্পনিক লোকেশন নির্বাচন হচ্ছে...", "🌟 আপনার Future Card প্রস্তুত হচ্ছে..."];
+  let stepIdx = 0;
+  const stepTextEl = document.getElementById('loadingStepText');
+  stepTextEl.innerText = steps[0];
+
+  const stepInterval = setInterval(() => {
+    stepIdx = (stepIdx + 1) % steps.length;
+    stepTextEl.innerText = steps[stepIdx];
+  }, 3000);
+
+  if (currentCountdownInterval) clearInterval(currentCountdownInterval);
+
+  currentCountdownInterval = setInterval(() => {
+    timeLeft--;
+    timerEl.innerText = timeLeft;
+    if (timeLeft <= 0) {
+      clearInterval(currentCountdownInterval);
+      clearInterval(stepInterval);
+      overlay.classList.remove('active');
+      if (typeof onComplete === 'function') onComplete();
+    }
+  }, 1000);
+}
+
+function generatePredictionResult(name, age, address) {
+  const partner = partnerNames[Math.floor(Math.random() * partnerNames.length)];
+  const partnerAge = Math.max(18, age + Math.floor(Math.random() * 5) - 2);
+  const city = broadLocations[Math.floor(Math.random() * broadLocations.length)];
+  const street = streetComponents[Math.floor(Math.random() * streetComponents.length)];
+  const fullFictionalAddress = `${street} — ${city}`;
+  const marriageAge = age + Math.floor(Math.random() * 5) + 1;
+  const meeting = firstMeetings[Math.floor(Math.random() * firstMeetings.length)];
+  const gift = firstGifts[Math.floor(Math.random() * firstGifts.length)];
+  const arg = funnyArguments[Math.floor(Math.random() * funnyArguments.length)];
+
+  currentPredictionData = { name, age, address, partner, partnerAge, city, fullFictionalAddress, marriageAge, meeting, gift, arg };
+  renderResultUI();
+}
+
+function renderResultUI() {
+  const data = currentPredictionData;
+  document.getElementById('displayUserNameHeader').innerText = `${data.name}-এর Future Report`;
+
+  const gridHtml = `
+    <div class='result-item'><div class='result-icon'>❤️</div><div><div class='result-label'>ভবিষ্যৎ সঙ্গী</div><div class='result-value'>${data.partner}</div></div></div>
+    <div class='result-item'><div class='result-icon'>🎂</div><div><div class='result-label'>সঙ্গীর বয়স</div><div class='result-value'>${data.partnerAge} বছর</div></div></div>
+    <div class='result-item'><div class='result-icon'>📍</div><div><div class='result-label'>অবস্থান</div><div class='result-value'>${data.city}</div></div></div>
+    <div class='result-item'><div class='result-icon'>🏠</div><div><div class='result-label'>কাল্পনিক ঠিকানা</div><div class='result-value' style='font-size: 0.95rem; color: #fbcfe8;'>${data.fullFictionalAddress}</div></div></div>
+    <div class='result-item'><div class='result-icon'>💍</div><div><div class='result-label'>সম্ভাব্য বিয়ের বয়স</div><div class='result-value'>${data.marriageAge} বছর</div></div></div>
+    <div class='result-item'><div class='result-icon'>☕</div><div><div class='result-label'>প্রথম দেখা</div><div class='result-value'>${data.meeting}</div></div></div>
+    <div class='result-item'><div class='result-icon'>🎁</div><div><div class='result-label'>প্রথম উপহার</div><div class='result-value'>${data.gift}</div></div></div>
+    <div class='result-item'><div class='result-icon'>😂</div><div><div class='result-label'>প্রথম মজার ঝগড়া</div><div class='result-value'>${data.arg}</div></div></div>
+  `;
+
+  document.getElementById('resultGridContent').innerHTML = gridHtml;
+  document.getElementById('formCard').style.display = 'none';
+  document.getElementById('resultCard').style.display = 'block';
+
+  drawShareCanvas();
+  window.scrollTo({ top: 200, behavior: 'smooth' });
+}
+
+function drawShareCanvas() {
+  const canvas = document.getElementById('shareCanvas');
+  const ctx = canvas.getContext('2d');
+  const data = currentPredictionData;
+
+  const bgGrad = ctx.createLinearGradient(0, 0, 1080, 1350);
+  bgGrad.addColorStop(0, '#070913');
+  bgGrad.addColorStop(0.5, '#190b28');
+  bgGrad.addColorStop(1, '#2d0c3f');
+  ctx.fillStyle = bgGrad;
+  ctx.fillRect(0, 0, 1080, 1350);
+
+  ctx.strokeStyle = '#a855f7';
+  ctx.lineWidth = 12;
+  ctx.strokeRect(30, 30, 1020, 1290);
+
+  ctx.fillStyle = 'rgba(18, 14, 35, 0.85)';
+  ctx.fillRect(70, 70, 940, 1210);
+
+  ctx.font = 'bold 50px "Noto Sans Bengali", sans-serif';
+  ctx.fillStyle = '#f59e0b';
+  ctx.textAlign = 'center';
+  ctx.fillText('🔮 আপনার ভবিষ্যৎ দেখুন 🔮', 540, 160);
+
+  ctx.font = 'bold 40px "Noto Sans Bengali", sans-serif';
+  ctx.fillStyle = '#ffffff';
+  ctx.fillText(`${data.name.toUpperCase()}-এর FUTURE REPORT`, 540, 235);
+
+  ctx.strokeStyle = 'rgba(168, 85, 247, 0.4)';
+  ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.moveTo(150, 275);
+  ctx.lineTo(930, 275);
+  ctx.stroke();
+
+  const items = [
+    { label: "❤️ ভবিষ্যৎ সঙ্গী", val: data.partner },
+    { label: "🎂 বয়স", val: `${data.partnerAge} বছর` },
+    { label: "📍 অবস্থান", val: data.city },
+    { label: "🏠 কাল্পনিক ঠিকানা", val: data.fullFictionalAddress },
+    { label: "💍 সম্ভাব্য বিয়ের বয়স", val: `${data.marriageAge} বছর` },
+    { label: "☕ প্রথম দেখা", val: data.meeting },
+    { label: "🎁 প্রথম উপহার", val: data.gift },
+    { label: "😂 প্রথম মজার ঝগড়া", val: data.arg }
+  ];
+
+  let startY = 350;
+  items.forEach(item => {
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.04)';
+    ctx.fillRect(110, startY - 40, 860, 80);
+
+    ctx.font = 'bold 28px "Noto Sans Bengali", sans-serif';
+    ctx.fillStyle = '#a855f7';
+    ctx.textAlign = 'left';
+    ctx.fillText(item.label, 150, startY + 10);
+
+    ctx.font = 'bold 30px "Noto Sans Bengali", sans-serif';
+    ctx.fillStyle = '#ffffff';
+    ctx.textAlign = 'right';
+    ctx.fillText(item.val, 930, startY + 10);
+
+    startY += 105;
+  });
+
+  ctx.font = '22px "Noto Sans Bengali", sans-serif';
+  ctx.fillStyle = '#9ca3af';
+  ctx.textAlign = 'center';
+  ctx.fillText('⚠️ এটি সম্পূর্ণ বিনোদনমূলক কাল্পনিক prediction। শুধু বিনোদনের জন্য।', 540, 1220);
+}
+
+function downloadCard() {
+  window.open(adUrl, '_blank');
+  triggerAdCountdown(() => {
+    const canvas = document.getElementById('shareCanvas');
+    const link = document.createElement('a');
+    link.download = `${currentPredictionData.name}-future-card.png`;
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  });
+}
+
+function shareCard() {
+  if (navigator.share && currentPredictionData) {
+    navigator.share({ title: 'আমার ভবিষ্যতের ঝলক', text: `🔮 আমি আমার ভবিষ্যৎ দেখলাম! আমার Future Partner-এর নাম নাকি ${currentPredictionData.partner} 😄`, url: window.location.href });
+  } else {
+    alert('কার্ড ডাউনলোড করে সরাসরি ফেসবুকে শেয়ার করুন!');
+  }
+}
+
+function regeneratePrediction() {
+  if (currentPredictionData) {
+    window.open(adUrl, '_blank');
+    triggerAdCountdown(() => {
+      generatePredictionResult(currentPredictionData.name, currentPredictionData.age, currentPredictionData.address);
+    });
+  }
+}
+
+function editInformation() {
+  document.getElementById('resultCard').style.display = 'none';
+  document.getElementById('formCard').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function renderGhalibCards(filterText = '') {
+  const container = document.getElementById('ghalibContainer');
+  let html = '';
+
+  ghalibShayariList.forEach((verse, index) => {
+    if (filterText && !verse.toLowerCase().includes(filterText.toLowerCase())) return;
+
+    html += `
+      <div class='ghalib-card-item'>
+        <div style='font-size: 0.8rem; color: var(--secondary-glow); margin-bottom: 8px; font-weight: 700;'>বাণী নং #${index + 1}</div>
+        <div class='ghalib-verse'>"${verse}"</div>
+        <div class='ghalib-actions'>
+          <button class='btn-secondary' style='font-size: 0.85rem; padding: 8px 14px;' onclick='toggleGhalibCustomize(${index})'>✏️ কাস্টমাইজ</button>
+          <button class='btn-secondary' style='font-size: 0.85rem; padding: 8px 14px;' onclick='triggerGhalibAdAndDownload(${index})'>⬇️ ডাউনলোড</button>
+        </div>
+        <div class='ghalib-customize-box' id='ghalibCustBox${index}'>
+          <div class='form-group' style='margin-bottom: 12px; margin-top: 10px;'>
+            <label class='form-label' style='font-size:0.8rem;'>আপনার নাম:</label>
+            <input class='form-input' id='ghalibName${index}' style='padding: 10px; font-size:0.9rem;' type='text' value='Tanbin'/>
+          </div>
+          <div class='form-group' style='margin-bottom: 12px;'>
+            <label class='form-label' style='font-size:0.8rem;'>প্রিয়জনের নাম:</label>
+            <input class='form-input' id='ghalibPartner${index}' style='padding: 10px; font-size:0.9rem;' type='text' value='মিম'/>
+          </div>
+          <button class='btn-primary' style='padding: 10px; font-size:0.9rem;' onclick='triggerGhalibAdAndDownload(${index})'>✨ পোস্টকার্ড তৈরি করুন</button>
+        </div>
+      </div>
+    `;
+  });
+  container.innerHTML = html;
+}
+
+function toggleGhalibCustomize(index) {
+  document.getElementById(`ghalibCustBox${index}`).classList.toggle('active');
+}
+
+function filterGhalibShayari() {
+  renderGhalibCards(document.getElementById('ghalibSearchInput').value);
+}
+
+function triggerGhalibAdAndDownload(index) {
+  window.open(adUrl, '_blank');
+  triggerAdCountdown(() => {
+    downloadGhalibCardImage(index);
+  });
+}
+
+function downloadGhalibCardImage(index) {
+  const verse = ghalibShayariList[index];
+  const userName = document.getElementById(`ghalibName${index}`)?.value || 'Tanbin';
+  const partnerName = document.getElementById(`ghalibPartner${index}`)?.value || 'মিম';
+
+  const canvas = document.createElement('canvas');
+  canvas.width = 1080;
+  canvas.height = 1350;
+  const ctx = canvas.getContext('2d');
+
+  const grad = ctx.createLinearGradient(0, 0, 1080, 1350);
+  grad.addColorStop(0, '#070913');
+  grad.addColorStop(0.5, '#20082c');
+  grad.addColorStop(1, '#0f0518');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, 1080, 1350);
+
+  ctx.strokeStyle = '#ec4899';
+  ctx.lineWidth = 14;
+  ctx.strokeRect(35, 35, 1010, 1280);
+
+  ctx.fillStyle = 'rgba(20, 12, 35, 0.9)';
+  ctx.fillRect(75, 75, 930, 1200);
+
+  ctx.font = 'bold 45px "Noto Sans Bengali", sans-serif';
+  ctx.fillStyle = '#f59e0b';
+  ctx.textAlign = 'center';
+  ctx.fillText('❤️ মির্জা গালিবের প্রেমের বাণী ❤️', 540, 180);
+
+  ctx.font = '32px "Noto Sans Bengali", sans-serif';
+  ctx.fillStyle = '#ec4899';
+  ctx.fillText(`For: ${partnerName} — From: ${userName}`, 540, 250);
+
+  ctx.strokeStyle = 'rgba(236, 72, 153, 0.4)';
+  ctx.lineWidth = 3;
+  ctx.beginPath();
+  ctx.moveTo(150, 300);
+  ctx.lineTo(930, 300);
+  ctx.stroke();
+
+  ctx.font = '34px "Noto Sans Bengali", sans-serif';
+  ctx.fillStyle = '#f3f4f6';
+  ctx.textAlign = 'center';
+  wrapText(ctx, `"${verse}"`, 540, 500, 800, 52);
+
+  ctx.font = '24px "Noto Sans Bengali", sans-serif';
+  ctx.fillStyle = '#9ca3af';
+  ctx.fillText('🔮 আপনার ভবিষ্যৎ দেখুন | রোমান্টিক পোস্টকার্ড', 540, 1200);
+
+  const link = document.createElement('a');
+  link.download = `ghalib-shayari-${index + 1}.png`;
+  link.href = canvas.toDataURL('image/png');
+  link.click();
+}
+
+function wrapText(context, text, x, y, maxWidth, lineHeight) {
+  const words = text.split(' ');
+  let line = '';
+  let currentY = y;
+  for (let n = 0; n < words.length; n++) {
+    const testLine = line + words[n] + ' ';
+    const metrics = context.measureText(testLine);
+    if (metrics.width > maxWidth && n > 0) {
+      context.fillText(line, x, currentY);
+      line = words[n] + ' ';
+      currentY += lineHeight;
+    } else {
+      line = testLine;
+    }
+  }
+  context.fillText(line, x, currentY);
+}
+
+window.onload = function() {
+  renderGhalibCards();
+};
+//]]>
+</script>
+
+</body>
+</html>
